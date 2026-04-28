@@ -1,0 +1,28 @@
+services:
+  mysql-rower:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=rower
+      - MYSQL_ROOT_PASSWORD=mysql
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./mysql-book/data:/var/lib/mysql
+      - ./mysql-book/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app1:
+    build: .
+    depends_on:
+      - mysql-rower
+    ports:
+      - "8080:8080"
+
+#  app2:  USUWAMY BO ROBIMY AUTO SCALING
+#    build: .
+#    depends_on:
+#      - mysql-rower
+#    ports:
+#      - "8081:8080"

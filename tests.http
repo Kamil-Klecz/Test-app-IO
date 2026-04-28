@@ -1,0 +1,36 @@
+
+
+### CREATE an item
+POST http://localhost:8080/items
+Content-Type: application/json
+
+{
+  "name": "TEST"
+}
+
+###
+
+### GET all items
+GET http://localhost:8080/items
+Accept: application/json
+
+###
+
+### GET one item by ID (replace 1 with actual ID)
+GET http://localhost:8080/items/1
+Accept: application/json
+
+###
+
+### UPDATE an item (replace 1 with actual ID)
+PUT http://localhost:8080/items/1
+Content-Type: application/json
+
+{
+  "name": "EEEEEEEEE"
+}
+
+###
+
+### DELETE an item (replace 1 with actual ID)
+DELETE http://localhost:8080/items/2
