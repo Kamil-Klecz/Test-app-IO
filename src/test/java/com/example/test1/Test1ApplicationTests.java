@@ -10,4 +10,10 @@ class Test1ApplicationTests {
 	void contextLoads() {
 	}
 
+    @Test
+    void add() {
+        Test1Application test1Application = new Test1Application();
+        assert(test1Application.add(5,5) == 10);
+
+    }
 }

@@ -10,4 +10,8 @@ public class Test1Application {
 		SpringApplication.run(Test1Application.class, args);
 	}
 
+	public int add(int a, int b){
+		return a*b;
+	}
+
 }
